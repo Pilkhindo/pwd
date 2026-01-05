@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuis Bahasa Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <!-- FORM DATA SISWA -->
+    <div id="form">
+        <h2>Data Siswa</h2>
+        <input id="nama" placeholder="Nama">
+        <input id="umur" placeholder="Umur">
+        <input id="kelas" placeholder="Kelas">
+        <button onclick="mulai()">Mulai</button>
+    </div>
+
+    <!-- KUIS -->
+    <div id="kuis" class="hide">
+        <h2>Belajar Bahasa Indonesia</h2>
+        <p id="tanya"></p>
+
+        <div id="A" class="opsi" onclick="jawab('A')"></div>
+        <div id="B" class="opsi" onclick="jawab('B')"></div>
+        <div id="C" class="opsi" onclick="jawab('C')"></div>
+        <div id="D" class="opsi" onclick="jawab('D')"></div>
+
+        <button onclick="lanjut()">Soal Selanjutnya</button>
+    </div>
+
+    <!-- HASIL -->
+    <div id="hasil" class="hide">
+        <h2>Hasil Kuis</h2>
+        <p id="score"></p>
+        <button onclick="location.reload()">Ulangi</button>
+    </div>
+</div>
+
+
+<script src="bhsindo.js"></script>
+<script src="webbb.js"></script>
+</body>
+</html>

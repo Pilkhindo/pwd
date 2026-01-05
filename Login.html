@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
+        color: #333;
+        background: linear-gradient(to bottom, lightskyblue, white);
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        margin: 40px auto;
+        padding: 32px 44px;
+        margin-bottom: 30px;
+        border: 1px solid lightskyblue;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 1px 1px 1px 1px #ddd;
+        width: 300px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        border-radius: 2px;
+        border: 1px solid #999;
+        padding: 6px;
+        margin-bottom: 12px;
+        outline: none;
+      }
+
+      h2 {
+        text-align: center;
+        padding: 10px;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border-color: #555;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 6px;
+        font-size: 1em;
+        background: #0092d8;
+        border: 1px solid #0092d8;
+        border-radius: 4px;
+        outline: none;
+        color: #fff;
+      }
+
+      input[type="submit"]:hover {
+        cursor: pointer;
+        background: darkblue;
+      }
+
+      .error {
+        border: 1px solid #ff6c6c;
+        border-radius: 4 px;
+        padding: 12px;
+        margin-bottom: 18px;
+        background: #ff7272;
+        color: #fff;
+      }
+
+      main {
+        max-width: var(--max-w);
+        margin: 28px auto;
+        padding: 0 20px;
+        flex: 1;
+      }
+      header {
+        width: 100%;
+        min-height: 2vh;
+        background: linear-gradient(
+          to right,
+          rgb(4, 159, 249),
+          rgb(0, 217, 250)
+        );
+        display: flex;
+        align-items: center;
+      }
+
+      .header-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      footer {
+        margin-top: 60px;
+        padding: 15px 0;
+        text-align: center;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    
+      <header>
+        <div class="header-content">
+          <h1>Selamat Datang</h1>
+          <p>
+            Website ini berisikan materi dari mata pelajaran
+            <b>Matematika</b>, <b>Bahasa Indonesia</b>, dan
+            <b>Ilmu Pengetahuan Alam (IPA)</b> dari jenjang SD, SMP, dan SMA
+            yang dikemas dengan game.
+          </p>
+        </div>
+      </header>
+      <main>
+    
+
+    <div class="container">
+      <form action="" class="form">
+        <h2>LOGIN</h2>
+        <div class="error" style="display: none"></div>
+
+        <div class="input-field">
+          <label for="username">Username</label>
+          <input type="text" id="username" />
+        </div>
+
+        <div class="input-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+        </div>
+
+        <input type="submit" value="login" />
+      </form>
+    </div>
+    </main>
+  </body>
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> (2026) MIBI — Semua hak cipta.</p>
+  </footer>
+  <script src="Javascript.js"></script>
+</html>

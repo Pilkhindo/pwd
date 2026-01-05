@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Mata Pelajaran</title>
+
+    <style>
+      /* ===== RESET ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth; /* scroll halus */
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      /* ===== SECTION FULL SCREEN ===== */
+      section {
+        height: 100vh; /* 1 layar penuh */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px;
+        color: #fff;
+      }
+
+      section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      section p {
+        max-width: 600px;
+        margin: auto;
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      /* ===== BUTTON ===== */
+      .btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+        backdrop-filter: blur(5px);
+      }
+
+      .btn:hover {
+        background: #fff;
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      /* ===== GRADIENT TIAP MAPEL ===== */
+      .math {
+        background: linear-gradient(135deg, #ff512f, #dd2476);
+      }
+
+      .indo {
+        background: linear-gradient(135deg, #1d976c, #93f9b9);
+        color: #003d2d;
+      }
+
+      .ipa {
+        background: linear-gradient(135deg, #396afc, #2948ff);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
+
+      .content {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s ease;
+      }
+
+      .content.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- MATEMATIKA -->
+    <section class="math">
+      <div class="content">
+        <h1>Matematika</h1>
+        <p>
+          Belajar logika, angka, dan pemecahan masalah untuk melatih pola pikir
+          kritis.
+        </p>
+        <a href="https://www.khanacademy.org/math" class="btn">Masuk Materi</a>
+      </div>
+    </section>
+
+    <!-- BAHASA INDONESIA -->
+    <section class="indo">
+      <div class="content">
+        <h1>Bahasa Indonesia</h1>
+        <p>
+          Mengembangkan kemampuan membaca, menulis, dan memahami teks dengan
+          baik.
+        </p>
+        <a href="index.html" class="btn">Masuk Materi</a>
+      </div>
+    </section>
+
+    <!-- IPA -->
+    <section class="ipa">
+      <div class="content">
+        <h1>IPA</h1>
+        <p>
+          Mengenal sains, alam, dan teknologi melalui pembelajaran yang
+          menyenangkan.
+        </p>
+        <a href="IPA.html" class="btn"
+          >Masuk Materi</a
+        >
+      </div>
+    </section>
+
+    <script>
+      const contents = document.querySelectorAll(".content");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      contents.forEach((content) => {
+        observer.observe(content);
+      });
+    </script>
+  </body>
+</html>

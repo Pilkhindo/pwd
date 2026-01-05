@@ -1,0 +1,63 @@
+body {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.box {
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+input, button {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+input {
+    border: 1px solid #ddd;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #764ba2;
+}
+
+.opsi {
+    background: #e3f2fd;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.opsi:hover {
+    background: #bbdefb;
+}
+
+.hide {
+    display: none;
+}
+
+#tanya {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
