@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Game Matematika SD</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .game-box {
+      background: white;
+      padding: 30px;
+      width: 320px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .pertanyaan {
+      font-size: 26px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4facfe;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0078ff;
+    }
+
+    .hasil {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .skor {
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="game-box">
+    <h1>Game Matematika</h1>
+    <p>Kelas SD</p>
+
+    <div class="pertanyaan" id="pertanyaan">?</div>
+
+    <input type="nomor" id="jawab" placeholder="Jawaban kamu" />
+
+    <button onclick="checkjawab()">Cek Jawaban</button>
+
+    <div class="hasil" id="hasil"></div>
+    <div class="skor">Skor: <span id="skor">0</span></div>
+  </div>
+
+  <script>
+    var a, b;
+    var skor = 0;
+
+    function buatsoal() {
+      a = Math.floor(Math.random() * 10) + 1;
+      b = Math.floor(Math.random() * 10) + 1;
+      document.getElementById("pertanyaan").innerText = `${a} + ${b} = ?`;
+      document.getElementById("jawab").value = "";
+      document.getElementById("hasil").innerText = "";
+    }
+
+    function checkjawab() {
+      var jawaban = Number(document.getElementById("jawab").value);
+      var benar = a + b;
+
+      if (jawaban === benar) {
+        document.getElementById("hasil").innerText = "✅ Benar";
+        document.getElementById("hasil").style.color = "green";
+        skor += 10;
+      } else {
+        document.getElementById("hasil").innerText = "❌ Salah";
+        document.getElementById("hasil").style.color = "red";
+      }
+
+      document.getElementById("skor").innerText = skor;
+      setTimeout(buatsoal, 1000);
+    }
+
+    buatsoal();
+  </script>
+
+</body>
+</html>
+
